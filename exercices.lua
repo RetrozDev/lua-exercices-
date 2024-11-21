@@ -70,9 +70,58 @@ print("Exo 6: \nLe plus grand nombre est : " .. findBiggestNumber({5, 10, 35, 20
 
 -- Demander un nombre à l'utilisateur et calculer sa factorielle.
 -- Code en dessous:
+function factorial()
+    print("Merci de choisir un nombre pour votre factorielle :")
+    local choosenNumber = tonumber(io.read())
+
+    if choosenNumber == nil or choosenNumber < 0 then
+        print("Erreur : veuillez entrer un nombre entier positif valide.")
+        return
+    end
+
+    if choosenNumber == 0 then
+        print("Exo 7: \nLa factorielle de 0 est 1")
+        return
+    end
+
+    local result = 1
+    for i = 1, choosenNumber do
+        result = result * i
+    end
+
+    print("Exo 7: \nLa factorielle de " .. choosenNumber .. " est " .. result)
+end
+
+factorial()
+
 
 -- Créer un mini-jeu où l'utilisateur doit deviner un nombre choisi aléatoirement par le programme.
 -- Code en dessous:
+function guessTheNumber()
+    local numberToFind = math.random(1, 10)
+    print("Exo 7: \nDevine le nombre entre 1 et 10 !")
+    
+    while true do
+        -- Lecture de l'entrée utilisateur
+        io.write("Votre essai : ")
+        local guessNumber = tonumber(io.read())
+
+        if not guessNumber then
+            print("Erreur : veuillez entrer un nombre valide.")
+        elseif guessNumber > numberToFind then
+            print("Le nombre est plus petit !")
+        elseif guessNumber < numberToFind then
+            print("Le nombre est plus grand !")
+        else
+            print("Bravo ! Vous avez trouvé le nombre : " .. numberToFind)
+            break 
+        end
+    end
+end
+
+guessTheNumber()
+
+
 
 -- Implémenter un algorithme de tri (par exemple, tri à bulles) pour un tableau donné.
 -- Code en dessous:
