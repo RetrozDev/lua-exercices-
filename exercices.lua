@@ -142,4 +142,65 @@ bubbleSort({5, 3, 8, 6, 2, 7, 4, 1})
 
 -- Créer un petit système d'inventaire où l'utilisateur peut ajouter, supprimer ou afficher des objets via des commandes.
 -- Code en dessous:
+local inventory = {}
+
+function addItem(item)
+    table.insert(inventory, item)
+    print("L'objet '" .. item .. "' a été ajouté à l'inventaire.")
+end
+
+function removeItem(item)
+    for i, v in ipairs(inventory) do
+        if v == item then
+            table.remove(inventory, i)
+            print("L'objet '" .. item .. "' a été supprimé de l'inventaire.")
+            return
+        end
+    end
+    print("L'objet '" .. item .. "' n'est pas dans l'inventaire.")
+end
+
+function displayInventory()
+    if #inventory == 0 then
+        print("L'inventaire est vide.")
+    else
+        print("Contenu de l'inventaire :")
+        for i, v in ipairs(inventory) do
+            print(i .. ". " .. v)
+        end
+    end
+end
+
+function inventorySystem()
+    print("Bienvenue dans le système d'inventaire !")
+    while true do
+        print("\nChoisissez une commande :")
+        print("1. Ajouter un objet")
+        print("2. Supprimer un objet")
+        print("3. Afficher l'inventaire")
+        print("4. Quitter")
+        
+        io.write("Votre choix : ")
+        local choice = tonumber(io.read())
+        
+        if choice == 1 then
+            io.write("Entrez le nom de l'objet à ajouter : ")
+            local item = io.read()
+            addItem(item)
+        elseif choice == 2 then
+            io.write("Entrez le nom de l'objet à supprimer : ")
+            local item = io.read()
+            removeItem(item)
+        elseif choice == 3 then
+            displayInventory()
+        elseif choice == 4 then
+            print("Au revoir !")
+            break
+        else
+            print("Commande invalide. Veuillez réessayer.")
+        end
+    end
+end
+
+inventorySystem()
 
