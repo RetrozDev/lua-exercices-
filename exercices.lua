@@ -56,7 +56,17 @@ sumArray({5, 10, 15, 20, 25}) -- 75
 
 -- Écrire une fonction qui prend un tableau de nombres et retourne le plus grand.
 -- Code en dessous:
+function findBiggestNumber(numbers)
+    local max = numbers[1] 
+    for i = 2, #numbers do
+        if numbers[i] > max then
+            max = numbers[i]
+        end
+    end
+    return max
+end
 
+print("Exo 6: \nLe plus grand nombre est : " .. findBiggestNumber({5, 10, 35, 20, 2}))
 
 -- Demander un nombre à l'utilisateur et calculer sa factorielle.
 -- Code en dessous:
