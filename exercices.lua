@@ -31,6 +31,17 @@ isNumberEven()
 
 -- Afficher les nombres de 1 à 10 en utilisant une boucle.
 -- Code en dessous:
+function countTo10()
+    print("Exo 4: \n")
+    local number = 1
+    while number <= 10 do
+        print(number)
+        number = number + 1 
+    end
+end
+
+
+countTo10()
 
 -- Créer un tableau de nombres, calculer et afficher leur somme.
 -- Code en dessous:
