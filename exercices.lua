@@ -10,6 +10,24 @@ print("Exo 2: \nLe résultat est de " .. sumNumber(10, 3))
 
 -- Demander un nombre à l'utilisateur et indiquer s'il est pair ou impair.
 -- Code en dessous:
+function isNumberEven()
+    print("Merci de choisir un nombre :")
+    
+    local choosenNumber = tonumber(io.read())
+    
+    if choosenNumber ~= nil then
+        if choosenNumber % 2 == 0 then
+            print("Exo 3: \n"..choosenNumber .. " est un nombre pair.")
+        else
+            print("Exo 3: \n"..choosenNumber .. " est un nombre impair.")
+        end
+    else
+        print("Erreur : veuillez entrer un nombre valide.")
+    end
+end
+
+
+isNumberEven()
 
 -- Afficher les nombres de 1 à 10 en utilisant une boucle.
 -- Code en dessous:
