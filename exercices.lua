@@ -4,7 +4,9 @@ print("Exo 1: \nBonjour, Lua!")
 
 -- Addition simple
 -- Code en dessous:
+function sumNumber(n1, n2) return n1 + n2 end
 
+print("Exo 2: \nLe résultat est de " .. sumNumber(10, 3))
 
 -- Demander un nombre à l'utilisateur et indiquer s'il est pair ou impair.
 -- Code en dessous:
