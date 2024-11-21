@@ -99,10 +99,9 @@ factorial()
 -- Code en dessous:
 function guessTheNumber()
     local numberToFind = math.random(1, 10)
-    print("Exo 7: \nDevine le nombre entre 1 et 10 !")
+    print("Exo 8: \nDevine le nombre entre 1 et 10 !")
     
     while true do
-        -- Lecture de l'entrée utilisateur
         io.write("Votre essai : ")
         local guessNumber = tonumber(io.read())
 
@@ -125,6 +124,21 @@ guessTheNumber()
 
 -- Implémenter un algorithme de tri (par exemple, tri à bulles) pour un tableau donné.
 -- Code en dessous:
+function bubbleSort(arr)
+    local n = #arr
+    for i = 1, n - 1 do
+        for j = 1, n - i do
+            if arr[j] > arr[j + 1] then
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            end
+        end
+    end
+    print("Exo 9: \nTableau trié : " .. table.concat(arr, ", "))    
+end
+
+
+bubbleSort({5, 3, 8, 6, 2, 7, 4, 1})
+
 
 -- Créer un petit système d'inventaire où l'utilisateur peut ajouter, supprimer ou afficher des objets via des commandes.
 -- Code en dessous:
