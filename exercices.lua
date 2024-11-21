@@ -6,7 +6,7 @@ print("Exo 1: \nBonjour, Lua!")
 -- Code en dessous:
 function sumNumber(n1, n2) return n1 + n2 end
 
-print("Exo 2: \nLe résultat est de " .. sumNumber(10, 3))
+print("Exo 2: \nLe résultat est de " .. sumNumber(10, 3)) --13
 
 -- Demander un nombre à l'utilisateur et indiquer s'il est pair ou impair.
 -- Code en dessous:
@@ -45,9 +45,18 @@ countTo10()
 
 -- Créer un tableau de nombres, calculer et afficher leur somme.
 -- Code en dessous:
+function sumArray(numbers)
+    local sum = 0
+    for _, value in ipairs(numbers) do
+        sum = sum + value
+    end
+    print("Exo 5: \n la somme du tableau est de " .. sum)
+end
+sumArray({5, 10, 15, 20, 25}) -- 75
 
 -- Écrire une fonction qui prend un tableau de nombres et retourne le plus grand.
 -- Code en dessous:
+
 
 -- Demander un nombre à l'utilisateur et calculer sa factorielle.
 -- Code en dessous:
